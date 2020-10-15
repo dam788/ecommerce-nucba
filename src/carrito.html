@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="assets/milhouse.png" type="favicon/icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- hojas css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- fontazome -->
+    <script defer src="./js/all.min.js"></script>
+    <title>Nerd King | Productos</title>
+</head>
+
+<body>
+    <!-- <header>
+        <nav>
+            <a class="nav-col linkLogo" href="/">
+                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+            </a>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <span>
+                                    Inicio
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/productos.html">
+                            <span active>
+                                    Productos
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/contacto.html">
+                            <span>
+                                    Contacto
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span id="cartNum">
+                                    0 
+                                </span>
+                                
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/sesion.html">
+                            <span id="userSesion">
+                                    Iniciar Sesion
+                                    <i class="fas fa-user"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="menuFlotante">
+                    <ul>
+                        <li id="userChange">
+                            <a href="/src/sesion.html">
+                                <i class="fas fa-user-circle"></i> cambiar de Usuario
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="exit">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> salir
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger">
+                    <span>Menú</span>
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+     -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">CARRITO</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? START SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
+
+            <!-- START TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0€</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END TOTAL -->
+
+            <!-- START MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL COMPRA -->
+
+
+        </div>
+
+    </section>
+
+
+        <div class="container-fluid bg-light">
+            <div class="row py-5">
+                <div class="col-lg7 mx-auto text-center">
+                    <input type="text" placeholder="Ingresa tu Email" class="newsletter">
+                    <button class="btn4 my-5 newsletter">NEWSLETTER</button>
+                    <p class="mt-5">©losDamis 2020</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- menu movile -->
+        <div id="persiana" class="persiana">
+            <ul>
+                <li>
+                    <a href="/">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/src/productos.html">
+                        <span>Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/src/contacto.html">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+                <div class="persianaCartUser">
+                    <a class="session" href="#">
+                        <span class="text-secondary">
+                            0
+                            <i class="fas fa-shopping-cart"></i>
+                         </span>
+                    </a>
+                    <a class="session" href="/src/sesion.html">
+                        <span id="userSesion2" class="text-secondary">
+                            Iniciar Sesion
+                            <i class="fas fa-user"></i>
+                            <button id ="exitMovile" class="remCart btn btn-sm btn-info" hidden></button>
+                        </span>
+                    </a>
+                </div>
+        </div>
+   
+</body>
+<script src="./js/productos.js"></script>
+<script src="./js/carrito.js"></script>
+<script>
+</script>
+
+</html>

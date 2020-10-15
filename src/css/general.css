@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+:root {
+    --color-blanco-0: white;
+    --color-blanco-1: #f5f5f5;
+    --color-1: #101b5a;
+    --color-2: #3ad2ee;
+    --color-3: #e41376;
+    --color-4: #ffd2ee;
+    --color-5: #8c98a9;
+    --sombra-1: rgba(128, 128, 128, 0.116);
+    user-select: none;
+}
+
+body {
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-5);
+}
+
+li a [active] {
+    text-decoration: none;
+    font-weight: 800;
+    color: var(--color-1);
+}
+
+a {
+    cursor: pointer;
+}
+
+
+/*niveles tipograficos*/
+
+h1 {
+    font-size: 55px;
+    color: var(--color-2);
+}
+
+h2 {
+    color: var(--color-2);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+
+/* botones */
+
+button {
+    margin: 2em 5px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    border: 2px solid var(--color-blanco-0);
+    background: none;
+    color: var(--color-blanco-0);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:hover {
+    background: linear-gradient(336deg, var(--color-1) 0%, var(--color-2) 100%);
+    animation: botonCrece 200ms linear forwards;
+}
+
+@keyframes botonCrece {
+    from {
+        background-size: 0;
+        background-repeat: no-repeat;
+    }
+    to {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        opacity: 1;
+    }
+}
+
+section {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.container {
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* quita absolutamente todos los sibrayados */
+* a:hover {
+    text-decoration: none !important; 
+}

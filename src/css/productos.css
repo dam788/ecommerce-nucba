@@ -1,0 +1,381 @@
+main{
+    width: 100%;
+}
+
+h2 {
+    color: var(--color-5);
+    margin: 2em 0;
+}
+
+/* buscador */
+section.mainFind {
+    background: url('../assets/background_products.png'), repeat-x;
+    background-color: var(--color-5);
+    width: 100%;
+    background-attachment: fixed;
+    padding: 15px 0;
+}
+
+form {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+
+input.inputBusca {
+    height: 10px;
+    margin: 20px 20px 20px 0px;
+    border: 0;
+    border-radius: 33px;
+    width: 600px;
+    padding: 20px;
+}
+
+input.inputBusca:focus {
+    outline-style: none;
+}
+
+button.botonBusca {
+    width: 45px;
+    height: 45px;
+    margin: 19px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+button:hover {
+    color: var(--color-blanco-0);
+}
+
+/* buscador */
+
+/* cajas producto ******************** */x
+
+section .collection {
+    width: 1080px;
+}
+
+section .collection h2 {
+    display: block;
+}
+
+.container {
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.boxProduct{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0.5em;
+    border: 1px solid #00000021;
+    border-radius: 10px;
+}
+
+.boxProduct:hover{
+    transform: translateY(-1px);
+    border: 1px solid #0000003b; 
+    box-shadow: 0px 12px 16px #00000012;
+}
+
+.noResults{
+    grid-column: 1/-1;
+    margin: 20px 0;
+}
+
+.noResults img {
+    max-width: 450px;
+    min-width: 330px;
+}
+
+
+div.imgProduct {
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    object-fit: cover;
+    background-position: bottom;
+    width: 100%;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.imgProduct img:hover{
+    animation: crece 1s 1s ease-in-out forwards alternate;
+}
+
+@keyframes crece {
+    to{
+        transform: scale(1.5);
+    }
+}
+
+.boxProduct img.boxForm {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.boxProduct h3.precio {
+    position: absolute;
+    margin: 10px;
+    padding: 4px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-blanco-0);
+    opacity: 1;
+    color: yellow;
+    font-size: 22px;
+    background-color:  #000000be;
+    bottom: 15px;
+    right: 0px;
+}
+
+.boxProduct h3.precio small {
+    text-decoration: line-through;
+    font-weight: 200;
+    opacity: 0.6;
+    color: var(--color-blanco-0);
+}
+
+.pieBox {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pieBox h3 {
+    margin: 0;
+    color: var(--color-5);
+}
+
+.pieBox button {
+    display: flex;
+    border: 1px solid #00000031;
+    color: var(--color-5);
+    margin: 0 0.2em;
+    font-size: larger;
+    width: 20px;
+    justify-content: center;
+    background: var(--color-white-1);
+    opacity: 1 !important;
+}
+
+.pieBox button:hover {
+    background: unset;
+    color: white !important;
+    background-color: var(--color-5);
+}
+
+.titleSubtitle {
+    width: 100%;
+    text-align: initial;
+}
+/* productos **********************/
+
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+    /* use animation hack, if you have hard styled input */
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+    /* if input has one color, and didn't have bg-image use shadow */
+    /* -webkit-box-shadow: 0 0 0 1000px transparent inset; */
+    /* text color */
+    -webkit-text-fill-color: var(--color-1);
+    color: var(--color-1);
+    /* font weigth */
+    font-weight: 600!important;
+}
+
+h2 {
+    grid-column: 1/-1;
+    color: var(--color-2);
+    margin: 20px 0;
+}
+
+/* header correccion x bootstrap */
+nav {
+    display: flex !important;
+    align-items: unset !important;
+}
+
+.nav-col {
+    display: inline-block;
+    padding: 20px 0;
+    width: 33%;
+    align-content: center;
+}
+
+.nav-col:nth-child(2) {
+    display: flex;
+    place-content: center;
+}
+
+.nav-col:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-col:nth-child(4) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-col ul li {
+    padding: 10px 20px;
+    height: unset !important;
+}
+/* header correccion x bootstrap */
+
+/* correccion newsletter por bootstrap */
+input.newsletter{
+    height: 35px;
+    width: 99%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px inset var(--color-5);
+}
+
+
+
+button.newsletter {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(336deg, var(--color-1), var(--color-2) 100%) !important;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffffd0;
+    transition: transform 100ms linear;
+    transform: scale(1);
+    opacity: 0.9 !important;
+    margin: 1.5em 0 0 0 !important;
+}
+
+button:hover {
+    background: linear-gradient(336deg, var(--color-1), var(--color-2) 100%);
+    color: var(--color-blanco-0);
+    box-shadow: 0 4px 6px var(--sombra-1);
+    opacity: 1 !important;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+button:active {
+    opacity: 100%;
+    transform: scale(0.98);
+}
+/* correccion newsletter por bootstrap */
+
+
+/* ? SHOPPING CART */
+.shopping-cart{
+    box-sizing: border-box;
+    width: 100%;
+}
+.shopping-cart-items {
+    padding: 20px 0px;
+  }
+  
+  .shopping-cart-header {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .shopping-cart-image {
+    max-width: 100px;
+    border-radius: 20px;
+  }
+  
+  .shopping-cart-quantity-input {
+    max-width: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #eee;
+    padding: 5px;
+  }
+  
+  .shopping-cart-total {
+    min-height: 96px;
+  }
+  
+
+/* nucba store ******************** */
+
+section.mainSection {
+    background: url(../assets/font2.jpg);
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    top: 80px;
+}
+
+.nucBye{
+    animation: hidde 1s ease-out forwards;
+}
+
+@keyframes hidde {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+div.mainRow {
+    width: 1080px;
+    text-align: center;
+    padding: 2em 0.5em;
+}
+
+div.mainRow p {
+    color: var(--color-blanco-0);
+}
+
+.mainRow span {
+    color: white;
+}
+
+/* nucba store ******************** */
+
+
+/* media  queries */
+@media (max-width: 992px){
+    .container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 600px){
+    
+    .container {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    form {
+        width: 350px;
+    }
+
+    input.inputBusca{
+        width: fit-content;
+    }
+}
+
+/* media  queries */
+
+.none{
+    display: none !important;
+
+}

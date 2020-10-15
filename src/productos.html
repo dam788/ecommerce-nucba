@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="assets/milhouse.png" type="favicon/icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- hojas css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- fontazome -->
+    <script defer src="./js/all.min.js"></script>
+    <title>Nerd King | Productos</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="nav-col linkLogo" href="/">
+                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
+            </a>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <span>
+                  Inicio
+                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/productos.html">
+                            <span active>
+                  Productos
+                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/src/contacto.html">
+                            <span>
+                  Contacto
+                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <ul>
+                    <li>
+                        <a href="carrito.html">
+                            <span id="cartNum">
+                                    0 
+                            </span>
+                                
+                            <i class="fas fa-shopping-cart"></i>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="session" href="/src/sesion.html">
+                            <span id="userSesion">
+                  Iniciar Sesion
+                  <i class="fas fa-user"></i>
+                </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="menuFlotante">
+                    <ul>
+                        <li id="userChange">
+                            <a href="/src/sesion.html">
+                                <i class="fas fa-user-circle"></i> cambiar de Usuario
+                            </a>
+                        </li>
+                    </ul>
+                    <ul id="exit">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i> salir
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div  id="menu" class="hamburger">
+                <span>Menú</span>
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="mainFind">
+            <form>
+                <input type="text" class="inputBusca" placeholder="Buscador de Productos">
+                <button class="botonBusca">
+                        <i class="fas fa-search"></i>
+                    </button>
+            </form>
+        </section>
+        <section class="mainSection">
+            <div class="mainRow">
+                <h1>Nucba store</h1>
+                <p class="py-3">
+                    Productos 100% Originales, de Nucbers para Nucbers a un solo click de distancia!
+                </p>
+                <button id="findNucba"><a href="#">
+                    <span>
+                        VER PRODUCTOS
+                    </span>
+                </a></button>
+            </div>
+        </section>
+        <section class="collection">
+            <div id="insertProducts" class="container">
+                <h2>Productos</h2>
+            </div>
+        </section>
+       
+
+
+        <div class="container-fluid bg-light">
+            <div class="row py-5">
+                <div class="col-lg7 mx-auto text-center">
+                    <input type="text" placeholder="Ingresa tu Email" class="newsletter">
+                    <button class="btn btn4 my-5 newsletter">NEWSLETTER</button>
+                    <p class="mt-5">©losDamis 2020</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="persiana" class="persiana">
+        <ul>
+            <li>
+                <a href="/">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/productos.html">
+                    <span>Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/src/contacto.html">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+            <div class="persianaCartUser">
+                <a class="session" href="/src/carrito.html">
+                    <span class="text-secondary" id="cartNum2" >
+                        0
+                        <i class="fas fa-shopping-cart"></i>
+                     </span>
+                </a>
+                <a class="session" href="/src/sesion.html">
+                    <span id="userSesion2" class="text-secondary">
+                        Iniciar Sesion
+                        <i class="fas fa-user"></i>
+                        <button id ="exitMovile" class="remCart btn btn-sm btn-info" hidden></button>
+                    </span>
+                </a>
+            </div>
+    </div>
+
+</body>
+<script src="./js/productos.js"></script>
+<script>
+</script>
+
+</html>

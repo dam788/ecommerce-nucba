@@ -1,0 +1,138 @@
+html {
+    background-color: var(--color-5) !important;
+}
+
+body {
+    background-color: var(--color-5);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background: url('../assets/fondo.svg') repeat-x left bottom;
+    height: 100vh;
+}
+
+main {
+    background-color: var(--color-blanco-1);
+    width: 400px;
+    min-width: 300px;
+    top: 110px;
+    border-radius: 12px;
+    margin: 2em 1em;
+    height: fit-content;
+}
+
+form {
+    margin: 0.5em;
+    padding: 2em 2em 0 2em;
+}
+
+h2 {
+    display: flex;
+    align-content: center;
+}
+
+label {
+    color: var(--color-5);
+}
+
+input[type=text],
+select {
+    height: 35px;
+    width: 99%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px inset var(--color-5);
+}
+
+button {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(336deg, var(--color-1), var(--color-2) 100%) !important;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffffd0;
+    transition: transform 100ms linear;
+    transform: scale(1);
+    opacity: 0.9 !important;
+    margin: 1.5em 0 0 0 !important;
+}
+
+button:hover {
+    background: linear-gradient(336deg, var(--color-1), var(--color-2) 100%);
+    color: var(--color-blanco-0);
+    box-shadow: 0 4px 6px var(--sombra-1);
+    opacity: 1 !important;
+}
+
+button:active {
+    opacity: 100%;
+    transform: scale(0.98);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0px;
+    padding: 0px;
+    height: 80px;
+}
+
+small {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1em 0;
+    background-color: var(--color-3);
+    color: var(--color-4);
+    font-weight: bolder;
+    visibility: hidden;
+    border-radius: 0 0 12px 12px;
+}
+
+.error {
+    visibility: visible;
+    font-weight: 800;
+}
+
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+    /* use animation hack, if you have hard styled input */
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+    /* if input has one color, and didn't have bg-image use shadow */
+    /* -webkit-box-shadow: 0 0 0 1000px transparent inset; */
+    /* text color */
+    -webkit-text-fill-color: var(--color-1);
+    color: var(--color-1);
+    /* font weigth */
+    font-weight: 600!important;
+}
+
+*:focus {
+    outline-style: none;
+}
+
+.user {
+    padding: 10px 10px;
+    background-color: var(--color-blanco-0);
+    border-radius: 50%;
+    color: var(--color-2);
+    margin-right: 0.3em;
+}
+
+.exclamation {
+    margin-right: 10px;
+}
+
+.linkLogo {
+    cursor: pointer;
+}
