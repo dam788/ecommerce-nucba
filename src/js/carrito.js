@@ -5,7 +5,7 @@ const shoppingCartItemsContainer = document.querySelector(
   ".shoppingCartItemsContainer"
 );
 
-const arrCart = JSON.parse(localStorage.getItem("carrito")) || [];
+let arrCart = JSON.parse(localStorage.getItem("carrito")) || [];
 let filterProd = [];
 
 const dibujaProductos = () => {
@@ -41,16 +41,40 @@ const dibujaProductos = () => {
 };
 // let remover = shoppingCartRow.querySelector(".buttonDelete");
 
+// -----------------
+
+// console.log( array );
+
+// ----------------
+console.log(arrCart);
 borrarCarr = (e) => {
+  // --REMOVEMOS DEL DOM--
   let objRemove = e.parentNode.parentNode.parentNode.parentNode;
-  // objRemove.classlist.add = ''
+
   objRemove.remove();
 
+  // -- REMOVEMOS DEL ARRAY --
   let equis = +e.dataset.position;
-  let remove = arrCart.slice(equis, equis + 1);
-  // let remove = arrCart[equis];
-  // arrCart.pull(remove);
-  console.log(remove);
+
+  // --CON SLICE--
+  let arrLength = arrCart.length;
+
+  let mitad1 = arrCart.slice(0, equis);
+  let mitad2 = arrCart.slice(equis + 1, arrCart.length + 1);
+
+  // --CON SPLICE--
+  // arrCart.splice(equis, 1);
+  // console.log(arrCart);
+
+  // -- REMOVEMOS DEL LOCAL STORAGE --
+  localStorage = storage.removeItem("carrito");
+  arrCart = mitad1.concat(mitad2);
+
+  console.log(arrLength);
+
+  console.log(arrCart);
+  localStorage = storage.setItem("carrito", JSON.stringify(arrCart));
+
   updateShoppingCartTotal();
 };
 

@@ -283,7 +283,7 @@
       "29",
       "bolso",
       "riñonera kit nucba",
-      "",
+      "riñonera nucba",
       6700,
       30,
       "./assets/productos/prod8.jpg"
