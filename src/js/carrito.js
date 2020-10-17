@@ -1,46 +1,26 @@
-const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
-addToShoppingCartButtons.forEach((addToCartButton) => {
-  addToCartButton.addEventListener('click', addToCartClicked);
-});
+// (() => {
+// // const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
+// // addToShoppingCartButtons.forEach((addToCartButton) => {
+//   addToCartButton.addEventListener("click", addToCartClicked);
+// });
 
-const comprarButton = document.querySelector('.comprarButton');
-comprarButton.addEventListener('click', comprarButtonClicked);
+const comprarButton = document.querySelector(".comprarButton");
+comprarButton.addEventListener("click", comprarButtonClicked);
 
 const shoppingCartItemsContainer = document.querySelector(
-  '.shoppingCartItemsContainer'
+  ".shoppingCartItemsContainer"
 );
 
-function addToCartClicked(event) {
-  const button = event.target;
-  const item = button.closest('.item');
+const arrCart = JSON.parse(localStorage.getItem("carrito")) || [];
+let filterProd = [];
 
-  const itemTitle = item.querySelector('.item-title').textContent;
-  const itemPrice = item.querySelector('.item-price').textContent;
-  const itemImage = item.querySelector('.item-image').src;
-
-  addItemToShoppingCart(itemTitle, itemPrice, itemImage);
-}
-
-function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
-    'shoppingCartItemTitle'
-  );
-  for (let i = 0; i < elementsTitle.length; i++) {
-    if (elementsTitle[i].innerText === itemTitle) {
-      let elementQuantity = elementsTitle[
-        i
-      ].parentElement.parentElement.parentElement.querySelector(
-        '.shoppingCartItemQuantity'
-      );
-      elementQuantity.value++;
-      $('.toast').toast('show');
-      updateShoppingCartTotal();
-      return;
-    }
-  }
-
-  const shoppingCartRow = document.createElement('div');
-  const shoppingCartContent = `
+const dibujaProductos = () => {
+  arrCart.map((art, indx) => {
+    const itemTitle = art.descripcion;
+    const itemPrice = art.precioDespues;
+    const itemImage = art.img;
+    const shoppingCartRow = document.createElement("div");
+    const shoppingCartContent = `
   <div class="row shoppingCartItem">
         <div class="col-6">
             <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
@@ -58,77 +38,110 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
                 class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
                 <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
                     value="1">
-                <button class="btn btn-danger buttonDelete" type="button">X</button>
+                <button class="btn btn-danger buttonDelete" type="button" onclick="borrarCarr(this)" data-position="${indx}">X</button>
             </div>
         </div>
     </div>`;
-  shoppingCartRow.innerHTML = shoppingCartContent;
-  shoppingCartItemsContainer.append(shoppingCartRow);
+    shoppingCartRow.innerHTML = shoppingCartContent;
+    shoppingCartItemsContainer.append(shoppingCartRow);
+  });
+};
+dibujaProductos();
+// let remover = shoppingCartRow.querySelector(".buttonDelete");
 
-  shoppingCartRow
-    .querySelector('.buttonDelete')
-    .addEventListener('click', removeShoppingCartItem);
+borrarCarr = (e) => {
+  let equis = +e.dataset.position;
 
-  shoppingCartRow
-    .querySelector('.shoppingCartItemQuantity')
-    .addEventListener('change', quantityChanged);
+  filterProd == ""
+    ? arrCart.pull(shoppingCartRow[equis])
+    : arrCart.pull(filterProd[filterProd.length - 1][equis]);
+  console.log(arrCart);
+  storage.removeItem("carrito", JSON.stringify(arrCart));
 
+  console.log("hola");
+  // localStorage.removeItem("arrCart.art");
+  // localStorage.remove("art");
   updateShoppingCartTotal();
-}
+};
+
+// .addEventListener("click", removeShoppingCartItem);
+
+// shoppingCartRow.querySelector(".shoppingCartItemQuantity");
+// .addEventListener("change", quantityChanged);
+
+updateShoppingCartTotal();
+
+// function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+//   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
+//     "shoppingCartItemTitle"
+//   );
+//   for (let i = 0; i < elementsTitle.length; i++) {
+//     if (elementsTitle[i].innerText === itemTitle) {
+//       let elementQuantity = elementsTitle[
+//         i
+//       ].parentElement.parentElement.parentElement.querySelector(
+//         ".shoppingCartItemQuantity"
+//       );
+//       elementQuantity.value++;
+//       $(".toast").toast("show");
+//       updateShoppingCartTotal();
+//       return;
+//     }
+//   }
+// }
 
 function updateShoppingCartTotal() {
   let total = 0;
-  const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+  const shoppingCartTotal = document.querySelector(".shoppingCartTotal");
 
-  const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+  const shoppingCartItems = document.querySelectorAll(".shoppingCartItem");
 
   shoppingCartItems.forEach((shoppingCartItem) => {
     const shoppingCartItemPriceElement = shoppingCartItem.querySelector(
-      '.shoppingCartItemPrice'
+      ".shoppingCartItemPrice"
     );
     const shoppingCartItemPrice = Number(
-      shoppingCartItemPriceElement.textContent.replace('€', '')
+      shoppingCartItemPriceElement.textContent.replace("$", "")
     );
     const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
-      '.shoppingCartItemQuantity'
+      ".shoppingCartItemQuantity"
     );
     const shoppingCartItemQuantity = Number(
       shoppingCartItemQuantityElement.value
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
-  shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
+  shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
 
-function removeShoppingCartItem(event) {
-  const buttonClicked = event.target;
-  buttonClicked.closest('.shoppingCartItem').remove();
-  updateShoppingCartTotal();
-}
+// function removeShoppingCartItem(event) {
+//   const buttonClicked = event.target;
+//   buttonClicked.closest(".shoppingCartItem").remove();
+//   updateShoppingCartTotal();
+// }
 
-function quantityChanged(event) {
-  const input = event.target;
-  input.value <= 0 ? (input.value = 1) : null;
-  updateShoppingCartTotal();
-}
+// function quantityChanged(event) {
+//   const input = event.target;
+//   input.value <= 0 ? (input.value = 1) : null;
+//   updateShoppingCartTotal();
+// }
 
 function comprarButtonClicked() {
-  shoppingCartItemsContainer.innerHTML = '';
+  shoppingCartItemsContainer.innerHTML = "";
   updateShoppingCartTotal();
 }
 
-
 // storage
-let emailName = document.getElementById('userSesion').parentNode.parentNode;
-let emailNameMovile = document.getElementById('userSesion2');
+let emailName = document.getElementById("userSesion").parentNode.parentNode;
+let emailNameMovile = document.getElementById("userSesion2");
 const storage = window.localStorage;
-let subMenu = document.getElementsByClassName('menuFlotante')[0];
+let subMenu = document.getElementsByClassName("menuFlotante")[0];
 
 const StorageMail = () => {
-  if (storage.getItem('userMail')) {
+  if (storage.getItem("userMail")) {
     let nameSesionMovile = `                    
         <span id="userSesion2" class="text-secondary">
-          ${storage.getItem('userMail')}
+          ${storage.getItem("userMail")}
           <i class="fas fa-user"></i>
           <button id ="exitMovile" class="remCart btn btn-sm btn-info">
             salir
@@ -137,7 +150,7 @@ const StorageMail = () => {
     let nameSesion = `
         <a class="useActive">
           <span id="userSesion">
-            ${storage.getItem('userMail')}
+            ${storage.getItem("userMail")}
             <i class="fas fa-user"></i>
           </span>
         </a>
@@ -148,18 +161,18 @@ const StorageMail = () => {
 };
 StorageMail();
 
-emailName.addEventListener('click', () => {
-  storage.getItem('userMail')
-    ? subMenu.classList.toggle('visible')
-    : subMenu.classList.remove('visible');
+emailName.addEventListener("click", () => {
+  storage.getItem("userMail")
+    ? subMenu.classList.toggle("visible")
+    : subMenu.classList.remove("visible");
 });
 
-let exit = document.getElementById('exit');
-let exitMovile = document.getElementById('exitMovile');
+let exit = document.getElementById("exit");
+let exitMovile = document.getElementById("exitMovile");
 
-exit.addEventListener('click', () => {
+exit.addEventListener("click", () => {
   storage.clear();
-  if (!storage.getItem('userMail')) {
+  if (!storage.getItem("userMail")) {
     emailName.innerHTML = `
         <a class="session" href="/src/sesion.html">
             <span id="userSesion">
@@ -175,12 +188,12 @@ exit.addEventListener('click', () => {
       </span>
       `;
   }
-  subMenu.classList.remove('visible');
+  subMenu.classList.remove("visible");
 });
-exitMovile.addEventListener('click', () => {
+exitMovile.addEventListener("click", () => {
   storage.clear();
   console.log(exit);
-  if (!storage.getItem('userMail')) {
+  if (!storage.getItem("userMail")) {
     emailName.innerHTML = `
         <a class="session" href="/src/sesion.html">
             <span id="userSesion">
@@ -196,6 +209,7 @@ exitMovile.addEventListener('click', () => {
       </span>
       `;
   }
-  subMenu.classList.remove('visible');
+  subMenu.classList.remove("visible");
 });
 // storage
+// })();

@@ -1,143 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <link rel="icon" href="assets/milhouse.png" type="" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- hojas css -->
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./css/sesion.css">
-    <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/sesion.css" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Iniciar Sesion</title>
     <style type="text/css">
-        .session {
-            visibility: hidden;
-        }
+      .session {
+        visibility: hidden;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <a class="nav-col linkLogo" href="/">
-                <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king">
-            </a>
-            <div class="nav-col">
-                <ul>
-                    <li>
-                        <a href="/">
-                            <span active>
-                  Inicio
-                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/src/productos.html">
-                            <span>
-                  Productos
-                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/src/contacto.html">
-                            <span>
-                  Contacto
-                </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-col">
-                <ul>
-                    <li>
-                        <a href="carrito.html">
-                            <span>
+      <nav>
+        <a class="nav-col linkLogo" href="/">
+          <img src="./assets/logo.svg" alt="logotipo de la pagina: nerd king" />
+        </a>
+        <div class="nav-col">
+          <ul>
+            <li>
+              <a href="/">
+                <span active> Inicio </span>
+              </a>
+            </li>
+            <li>
+              <a href="/src/productos.html">
+                <span> Productos </span>
+              </a>
+            </li>
+            <li>
+              <a href="/src/contacto.html">
+                <span> Contacto </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-col">
+          <ul>
+            <li>
+              <a href="carrito2.html">
+                <span>
                   0
                   <i class="fas fa-shopping-cart"></i>
                 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="session" href="/src/sesion.html">
-                            <span id="userSesion">
+              </a>
+            </li>
+            <li>
+              <a class="session" href="/src/sesion.html">
+                <span id="userSesion">
                   Iniciar Sesion
                   <i class="fas fa-user"></i>
                 </span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="menuFlotante">
-                    <ul>
-                        <li id="userChange">
-                            <a href="/src/sesion.html">
-                                <i class="fas fa-user-circle"></i> cambiar de Usuario
-                            </a>
-                        </li>
-                    </ul>
-                    <ul id="exit">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-sign-out-alt"></i> salir
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div  id="menu" class="hamburger">
-                <span>Menú</span>
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
+              </a>
+            </li>
+          </ul>
+          <div class="menuFlotante">
+            <ul>
+              <li id="userChange">
+                <a href="/src/sesion.html">
+                  <i class="fas fa-user-circle"></i> cambiar de Usuario
+                </a>
+              </li>
+            </ul>
+            <ul id="exit">
+              <li>
+                <a href="#"> <i class="fas fa-sign-out-alt"></i> salir </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="menu" class="hamburger">
+          <span>Menú</span>
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
     </header>
 
     <!-- Formulario -->
     <main>
-        <form method="post">
-            <h2 class="sesion">
-                <i class="far fa-user user"></i> Iniciar Sesión
-            </h2>
-            <ul>
-                <li class="form-control">
-                    <label for="email">E-mail</label>
-                    <input id="email" type="text" name="email" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this)" />
-                </li>
+      <form method="post">
+        <h2 class="sesion"><i class="far fa-user user"></i> Iniciar Sesión</h2>
+        <ul>
+          <li class="form-control">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              type="text"
+              name="email"
+              onfocus="entroEnFoco(this)"
+              onblur="salioDeFoco(this)"
+            />
+          </li>
 
-                <li class="form-control">
-                    <label for="pass" /> Contraseña
-                    <input id="pass" type="text" name="pass" onfocus="entroEnFoco(this)" onblur="salioDeFoco(this)" />
-                </li>
-                <button id="goForm" type="submit">Iniciar Sesión</button>
-            </ul>
-        </form>
-        <small id="message" class="...">
-                <i class="fas fa-exclamation-triangle exclamation"></i>
-                Datos incorrectos, verificar los campos ...
-            </small>
+          <li class="form-control">
+            <label for="pass" /> Contraseña
+            <input
+              id="pass"
+              type="text"
+              name="pass"
+              onfocus="entroEnFoco(this)"
+              onblur="salioDeFoco(this)"
+            />
+          </li>
+          <button id="goForm" type="submit">Iniciar Sesión</button>
+        </ul>
+      </form>
+      <small id="message" class="...">
+        <i class="fas fa-exclamation-triangle exclamation"></i>
+        Datos incorrectos, verificar los campos ...
+      </small>
     </main>
 
     <div id="persiana" class="persiana">
-        <ul>
-            <li>
-                <a href="/">
-                    <span>Inicio</span>
-                </a>
-            </li>
-            <li>
-                <a href="/src/productos.html">
-                    <span>Productos</span>
-                </a>
-            </li>
-            <li>
-                <a href="/src/contacto.html">
-                    <span>Contacto</span>
-                </a>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <a href="/">
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/productos.html">
+            <span>Productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/contacto.html">
+            <span>Contacto</span>
+          </a>
+        </li>
+      </ul>
     </div>
-</body>
-<script src="./js/sesion.js"></script>
-
+  </body>
+  <script src="./js/sesion.js"></script>
 </html>
