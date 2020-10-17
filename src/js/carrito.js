@@ -1,9 +1,3 @@
-// (() => {
-// // const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
-// // addToShoppingCartButtons.forEach((addToCartButton) => {
-//   addToCartButton.addEventListener("click", addToCartClicked);
-// });
-
 const comprarButton = document.querySelector(".comprarButton");
 comprarButton.addEventListener("click", comprarButtonClicked);
 
@@ -16,21 +10,20 @@ let filterProd = [];
 
 const dibujaProductos = () => {
   arrCart.map((art, indx) => {
-    const itemTitle = art.descripcion;
-    const itemPrice = art.precioDespues;
-    const itemImage = art.img;
+    let { descripcion, precioDespues, img } = art;
+
     const shoppingCartRow = document.createElement("div");
     const shoppingCartContent = `
   <div class="row shoppingCartItem">
         <div class="col-6">
             <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <img src=${itemImage} class="shopping-cart-image">
-                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+                <img src=${img} class="shopping-cart-image">
+                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${descripcion}</h6>
             </div>
         </div>
         <div class="col-2">
             <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+                <p class="item-price mb-0 shoppingCartItemPrice">${precioDespues}</p>
             </div>
         </div>
         <div class="col-4">
@@ -46,49 +39,20 @@ const dibujaProductos = () => {
     shoppingCartItemsContainer.append(shoppingCartRow);
   });
 };
-dibujaProductos();
 // let remover = shoppingCartRow.querySelector(".buttonDelete");
 
 borrarCarr = (e) => {
+  let objRemove = e.parentNode.parentNode.parentNode.parentNode;
+  // objRemove.classlist.add = ''
+  objRemove.remove();
+
   let equis = +e.dataset.position;
-
-  filterProd == ""
-    ? arrCart.pull(shoppingCartRow[equis])
-    : arrCart.pull(filterProd[filterProd.length - 1][equis]);
-  console.log(arrCart);
-  storage.removeItem("carrito", JSON.stringify(arrCart));
-
-  console.log("hola");
-  // localStorage.removeItem("arrCart.art");
-  // localStorage.remove("art");
+  let remove = arrCart.slice(equis, equis + 1);
+  // let remove = arrCart[equis];
+  // arrCart.pull(remove);
+  console.log(remove);
   updateShoppingCartTotal();
 };
-
-// .addEventListener("click", removeShoppingCartItem);
-
-// shoppingCartRow.querySelector(".shoppingCartItemQuantity");
-// .addEventListener("change", quantityChanged);
-
-updateShoppingCartTotal();
-
-// function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-//   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
-//     "shoppingCartItemTitle"
-//   );
-//   for (let i = 0; i < elementsTitle.length; i++) {
-//     if (elementsTitle[i].innerText === itemTitle) {
-//       let elementQuantity = elementsTitle[
-//         i
-//       ].parentElement.parentElement.parentElement.querySelector(
-//         ".shoppingCartItemQuantity"
-//       );
-//       elementQuantity.value++;
-//       $(".toast").toast("show");
-//       updateShoppingCartTotal();
-//       return;
-//     }
-//   }
-// }
 
 function updateShoppingCartTotal() {
   let total = 0;
@@ -114,17 +78,8 @@ function updateShoppingCartTotal() {
   shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
 
-// function removeShoppingCartItem(event) {
-//   const buttonClicked = event.target;
-//   buttonClicked.closest(".shoppingCartItem").remove();
-//   updateShoppingCartTotal();
-// }
-
-// function quantityChanged(event) {
-//   const input = event.target;
-//   input.value <= 0 ? (input.value = 1) : null;
-//   updateShoppingCartTotal();
-// }
+dibujaProductos();
+updateShoppingCartTotal();
 
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = "";
@@ -132,7 +87,7 @@ function comprarButtonClicked() {
 }
 
 // storage
-let emailName = document.getElementById("userSesion").parentNode.parentNode;
+// let emailName = document.getElementById("userSesion").parentNode.parentNode;
 let emailNameMovile = document.getElementById("userSesion2");
 const storage = window.localStorage;
 let subMenu = document.getElementsByClassName("menuFlotante")[0];
@@ -140,20 +95,20 @@ let subMenu = document.getElementsByClassName("menuFlotante")[0];
 const StorageMail = () => {
   if (storage.getItem("userMail")) {
     let nameSesionMovile = `                    
-        <span id="userSesion2" class="text-secondary">
+    <span id="userSesion2" class="text-secondary">
           ${storage.getItem("userMail")}
           <i class="fas fa-user"></i>
           <button id ="exitMovile" class="remCart btn btn-sm btn-info">
             salir
           </button>
-        </span>`;
+          </span>`;
     let nameSesion = `
         <a class="useActive">
-          <span id="userSesion">
-            ${storage.getItem("userMail")}
+        <span id="userSesion">
+        ${storage.getItem("userMail")}
             <i class="fas fa-user"></i>
-          </span>
-        </a>
+            </span>
+            </a>
         `;
     emailName.innerHTML = nameSesion;
     emailNameMovile.innerHTML = nameSesionMovile;
@@ -174,18 +129,18 @@ exit.addEventListener("click", () => {
   storage.clear();
   if (!storage.getItem("userMail")) {
     emailName.innerHTML = `
-        <a class="session" href="/src/sesion.html">
+    <a class="session" href="/src/sesion.html">
             <span id="userSesion">
-                Iniciar Sesion
-                <i class="fas fa-user"></i>
+            Iniciar Sesion
+            <i class="fas fa-user"></i>
             </span>
-        </a>
-        `;
+            </a>
+            `;
     emailNameMovile.innerHTML = `
       <span id="userSesion2" class="text-secondary">
-        Iniciar Sesion
+      Iniciar Sesion
         <i class="fas fa-user"></i>
-      </span>
+        </span>
       `;
   }
   subMenu.classList.remove("visible");
@@ -196,17 +151,17 @@ exitMovile.addEventListener("click", () => {
   if (!storage.getItem("userMail")) {
     emailName.innerHTML = `
         <a class="session" href="/src/sesion.html">
-            <span id="userSesion">
+        <span id="userSesion">
                 Iniciar Sesion
                 <i class="fas fa-user"></i>
             </span>
-        </a>
-        `;
+            </a>
+            `;
     emailNameMovile.innerHTML = `
-      <span id="userSesion2" class="text-secondary">
+    <span id="userSesion2" class="text-secondary">
         Iniciar Sesion
         <i class="fas fa-user"></i>
-      </span>
+        </span>
       `;
   }
   subMenu.classList.remove("visible");
