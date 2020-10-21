@@ -46,7 +46,7 @@ let exit = document.getElementById("exit");
 let exitMovile = document.getElementById("exitMovile");
 
 exit.addEventListener("click", () => {
-  storage.clear();
+  limpiarStorage();
   cartNum.innerHTML = '0';
   cartNum2.innerHTML = '0 <i class="fas fa-shopping-cart"></i>';
   if (!storage.getItem("userMail")) {
@@ -67,8 +67,9 @@ exit.addEventListener("click", () => {
   }
   subMenu.classList.remove("visible");
 });
+
 exitMovile.addEventListener("click", () => {
-  storage.clear();
+  limpiarStorage();
   if (!storage.getItem("userMail")) {
     mailName.innerHTML = `
     <a class="session" href="/src/sesion.html">
@@ -87,6 +88,10 @@ exitMovile.addEventListener("click", () => {
   }
   subMenu.classList.remove("visible");
 });
+
+const limpiarStorage = () => {
+  return window.localStorage.clear();
+}
 
 StorageMail();
 carrito();
