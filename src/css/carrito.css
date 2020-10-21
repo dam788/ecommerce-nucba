@@ -1,6 +1,10 @@
-/* ? SHOPPING CART */
-.shopping-cart-items {
-  padding: 20px 0px;
+/* SHOPPING CART */
+.shoppingCartItem {
+  border: 1px solid #00000011;
+  border-radius: 20px !important;
+}
+.shoppingCartItem:hover {
+  box-shadow: 0 5px 15px #8080801f;
 }
 
 .shopping-cart-header {
@@ -9,7 +13,7 @@
 
 .shopping-cart-image {
   max-width: 80px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .shopping-cart-quantity-input {
@@ -22,4 +26,8 @@
 
 .shopping-cart-total {
   min-height: 96px;
+}
+
+.buttonDelete{
+  border-radius: 50%;
 }

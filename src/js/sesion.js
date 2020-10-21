@@ -3,7 +3,6 @@ const email = document.getElementById('email'),
     pass = document.getElementById('pass'),
     submitBtn = document.getElementById('goForm'),
     message = document.getElementById('message'),
-    emailName = document.getElementById('userSesion'),
     storage = window.localStorage;
     const menu = document.getElementById('menu');
     const persiana = document.getElementById('persiana');
@@ -17,7 +16,6 @@ const sendForm = (e) => {
     e.preventDefault();
 
     if (validMail() && validPass()) {
-        StorageMail()
         return window.location.href = '/';
     }
 
@@ -59,13 +57,6 @@ const validPass = () => {
     return regex.test(value);
 }
 
-const StorageMail = () => {
-
-    if (storage.getItem('userMail')) {
-        emailName.innerHTML = `${storage.getItem('userMail')}`
-
-    }
-}
 
 const desplegaMenu = () => {
   console.log('click');

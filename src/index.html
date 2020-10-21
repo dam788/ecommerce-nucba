@@ -5,10 +5,9 @@
     <link rel="icon" href="assets/milhouse.png" type="" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- fontazome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script defer src="./js/all.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Nerd King | Principal</title>
 </head>
 
@@ -48,12 +47,10 @@
             <div class="nav-col">
                 <ul>
                     <li>
-                        <a class="session" href="/src/carrito2.html">
-                            <span>
-                  0
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-                        </a>
+                      <a href="/src/carrito2.html">
+                        <span id="cartNum"> 0 </span>
+                        <i class="fas fa-shopping-cart"></i>
+                      </a>
                     </li>
                     <li>
                         <a class="session" href="/src/sesion.html">
@@ -112,135 +109,56 @@
     <main>                     
         <div class="container-fluid bg-light">
             <div class="row py-5">
-                <div class="col-lg7 mx-auto text-center">
-                    <input type="text" placeholder="Ingresa tu Email" class="newsletter">
-                    <button class="btn btn4 my-5 newsletter">NEWSLETTER</button>
-                    <p class="mt-5">©losDamis 2020</p>
-                </div>
+              <div class="col-lg7 mx-auto text-center">
+                <input type="email" id="newsMail" placeholder="Ingresa tu Email" />
+                <button class="btn btn4 my-5" id="btn4">NEWSLETTER</button>
+      
+                <p>©losDamis 2020</p>
+              </div>
             </div>
         </div>
 
     </main>
     <div id="persiana" class="persiana">
-        <ul>
-            <li>
-                <a href="/">
-                    <span>Inicio</span>
-                </a>
-            </li>
-            <li>
-                <a href="/src/productos.html">
-                    <span>Productos</span>
-                </a>
-            </li>
-            <li>
-                <a href="/src/contacto.html">
-                    <span>Contacto</span>
-                </a>
-            </li>
-        </ul>
-            <div class="persianaCartUser">
-                <a  class="session" href="/src/carrito2.html">
-                    <span class="text-secondary">
-                        0
-                        <i class="fas fa-shopping-cart"></i>
-                     </span>
-                </a>
-                <a class="session" href="/src/sesion.html">
-                    <span id="userSesion2" class="text-secondary">
-                        Iniciar Sesion
-                        <i class="fas fa-user"></i>
-                        <button id ="exitMovile" class="remCart btn btn-sm btn-info" hidden>
-                    </span>
-                </a>
-            </div>
-    </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script>
-    // jquery 
-    $('.carousel').carousel()
-    // variables
-    let emailName = document.getElementById('userSesion').parentNode.parentNode;
-  let emailNameMovile = document.getElementById('userSesion2');
-  const storage = window.localStorage;
-  let subMenu = document.getElementsByClassName('menuFlotante')[0];
-
-  const StorageMail = () => {
-    if (storage.getItem('userMail')) {
-      let nameSesionMovile = `                    
+      <ul>
+        <li>
+          <a href="/">
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/productos.html">
+            <span>Productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/contacto.html">
+            <span>Contacto</span>
+          </a>
+        </li>
+      </ul>
+      <div class="persianaCartUser">
+        <a class="session" href="/src/carrito2.html">
+          <span id="cartNum2" class="text-secondary">
+            0
+            <i class="fas fa-shopping-cart"></i>
+          </span>
+        </a>
+        <a class="session" href="/src/sesion.html">
           <span id="userSesion2" class="text-secondary">
-            ${storage.getItem('userMail')}
+            Iniciar Sesion
             <i class="fas fa-user"></i>
-            <button id ="exitMovile" class="remCart btn btn-sm btn-info">
-              salir
-            </button>
-          </span>`;
-      let nameSesion = `
-          <a class="useActive">
-            <span id="userSesion">
-              ${storage.getItem('userMail')}
-              <i class="fas fa-user"></i>
-            </span>
-          </a>
-          `;
-      emailName.innerHTML = nameSesion;
-      emailNameMovile.innerHTML = nameSesionMovile;
-    }
-  };
-  StorageMail();
-
-  emailName.addEventListener('click', () => {
-    storage.getItem('userMail')
-      ? subMenu.classList.toggle('visible')
-      : subMenu.classList.remove('visible');
-  });
-
-  let exit = document.getElementById('exit');
-  let exitMovile = document.getElementById('exitMovile');
-
-  exit.addEventListener('click', () => {
-    storage.clear();
-    if (!storage.getItem('userMail')) {
-      emailName.innerHTML = `
-          <a class="session" href="/src/sesion.html">
-              <span id="userSesion">
-                  Iniciar Sesion
-                  <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `;
-      emailNameMovile.innerHTML = `
-        <span id="userSesion2" class="text-secondary">
-          Iniciar Sesion
-          <i class="fas fa-user"></i>
-        </span>
-        `;
-    }
-    subMenu.classList.remove('visible');
-  });
-  exitMovile.addEventListener('click', () => {
-    storage.clear();
-    if (!storage.getItem('userMail')) {
-      emailName.innerHTML = `
-          <a class="session" href="/src/sesion.html">
-              <span id="userSesion">
-                  Iniciar Sesion
-                  <i class="fas fa-user"></i>
-              </span>
-          </a>
-          `;
-      emailNameMovile.innerHTML = `
-        <span id="userSesion2" class="text-secondary">
-          Iniciar Sesion
-          <i class="fas fa-user"></i>
-        </span>
-        `;
-    }
-    subMenu.classList.remove('visible');
-  });
-</script>
-
+            <button
+              id="exitMovile"
+              class="remCart btn btn-sm btn-info"
+              hidden
+            ></button>
+          </span>
+        </a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
 </html>

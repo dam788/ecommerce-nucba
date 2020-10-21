@@ -8,6 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- hojas css -->
+    <script defer src="./js/all.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -20,7 +21,6 @@
     <link rel="stylesheet" href="css/productos.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <!-- fontazome -->
-    <script defer src="./js/all.min.js"></script>
     <title>Nerd King | Productos</title>
   </head>
 
@@ -54,7 +54,6 @@
             <li>
               <a href="carrito2.html">
                 <span id="cartNum"> 0 </span>
-
                 <i class="fas fa-shopping-cart"></i>
               </a>
             </li>
@@ -125,16 +124,12 @@
       <div class="container-fluid bg-light">
         <div class="row py-5">
           <div class="col-lg7 mx-auto text-center">
-            <input
-              type="text"
-              placeholder="Ingresa tu Email"
-              class="newsletter"
-            />
-            <button class="btn btn4 my-5 newsletter">NEWSLETTER</button>
-            <p class="mt-5">©losDamis 2020</p>
+            <input type="email" id="newsMail" placeholder="Ingresa tu Email" />
+            <button class="btn btn4 my-5" id="btn4">NEWSLETTER</button>
+            <p>©losDamis 2020</p>
           </div>
         </div>
-      </div>
+    </div>
     </main>
 
     <div id="persiana" class="persiana">
@@ -157,7 +152,7 @@
       </ul>
       <div class="persianaCartUser">
         <a class="session" href="/src/carrito2.html">
-          <span class="text-secondary" id="cartNum2">
+          <span id="cartNum2" class="text-secondary">
             0
             <i class="fas fa-shopping-cart"></i>
           </span>
@@ -177,5 +172,6 @@
     </div>
   </body>
   <script src="./js/productos.js"></script>
-  <script></script>
+  <script src="./js/storage.js"></script>
+  <script src="js/newsletter.js"></script>
 </html>

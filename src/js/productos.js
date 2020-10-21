@@ -1,10 +1,9 @@
-(() => {
+
   // productos
   let productos = [];
 
   class Producto {
     constructor(
-      id,
       categoria,
       producto,
       descripcion,
@@ -12,7 +11,6 @@
       precioDespues,
       img
     ) {
-      this.id = id;
       this.categoria = categoria;
       this.producto = producto;
       this.descripcion = descripcion;
@@ -28,7 +26,6 @@
   }
 
   const java = new Producto(
-      "1",
       "remera",
       "java",
       "mellange java",
@@ -37,7 +34,6 @@
       "./assets/productos/remer1.jpg"
     ),
     nasa = new Producto(
-      "2",
       "remera",
       "nasa",
       "producto especial",
@@ -46,7 +42,6 @@
       "./assets/productos/remer2.jpg"
     ),
     Github = new Producto(
-      "3",
       "remera",
       "Github",
       "remera github",
@@ -55,7 +50,6 @@
       "./assets/productos/remer3.jpg"
     ),
     jsMinimalistRem = new Producto(
-      "4",
       "remera",
       "js minimalist",
       "pequeño logo",
@@ -64,7 +58,6 @@
       "./assets/productos/remer4.jpg"
     ),
     go = new Producto(
-      "5",
       "remera",
       "GO!",
       "remera golang celeste",
@@ -73,7 +66,6 @@
       "./assets/productos/remer5.jpg"
     ),
     git = new Producto(
-      "6",
       "remera",
       "GIT",
       "remera gris git",
@@ -82,7 +74,6 @@
       "./assets/productos/remer6.jpg"
     ),
     remeraAndroid = new Producto(
-      "7",
       "remera",
       "droid",
       "remera android",
@@ -91,7 +82,6 @@
       "./assets/productos/remer7.jpg"
     ),
     kotlin = new Producto(
-      "8",
       "remera",
       "kotlin",
       "flotlin soft",
@@ -100,7 +90,6 @@
       "./assets/productos/remer8.jpg"
     ),
     batikGo = new Producto(
-      "9",
       "buzo",
       "batik go",
       "batik largo",
@@ -109,7 +98,6 @@
       "./assets/productos/buzo1.jpg"
     ),
     batikGit = new Producto(
-      "10",
       "buzo",
       "batik git",
       "batik largo",
@@ -118,7 +106,6 @@
       "./assets/productos/buzo2.jpg"
     ),
     jsMinimalistBuz = new Producto(
-      "11",
       "buzo",
       "js minimalist",
       "pequeño logo ",
@@ -127,7 +114,6 @@
       "./assets/productos/buzo3.jpg"
     ),
     buzoAndroid = new Producto(
-      "12",
       "buzo",
       "droid",
       "buzo android",
@@ -136,7 +122,6 @@
       "./assets/productos/buzo4.jpg"
     ),
     buzoKotlinColor = new Producto(
-      "13",
       "buzo",
       "Kotlin",
       "buzo kotlin color",
@@ -145,7 +130,6 @@
       "./assets/productos/buzo5.jpg"
     ),
     nodeMinimalist = new Producto(
-      "14",
       "buzo",
       "node minimalist",
       "node minimalist",
@@ -154,7 +138,6 @@
       "./assets/productos/buzo6.jpg"
     ),
     buzoJavascript = new Producto(
-      "15",
       "buzo",
       "js negro",
       "buzo javascript",
@@ -163,7 +146,6 @@
       "./assets/productos/buzo7.jpg"
     ),
     kotlinNegro = new Producto(
-      "16",
       "buzo",
       "kotlin negro",
       "buzo negro logo color",
@@ -172,7 +154,6 @@
       "./assets/productos/buzo8.jpg"
     ),
     buzoNucba = new Producto(
-      "17",
       "buzo",
       "buzo nucba",
       "buzo especial nucba",
@@ -181,7 +162,6 @@
       "./assets/productos/buzo9.jpg"
     ),
     gorraJava = new Producto(
-      "18",
       "gorra",
       "gorra java",
       "bordado java",
@@ -190,7 +170,6 @@
       "./assets/productos/gorra1.jpg"
     ),
     gorraC = new Producto(
-      "19",
       "gorra",
       "c++",
       "estampa c++",
@@ -199,7 +178,6 @@
       "./assets/productos/gorra2.jpg"
     ),
     gorraCode = new Producto(
-      "20",
       "gorra",
       "gorra code",
       "estampa code",
@@ -208,7 +186,6 @@
       "./assets/productos/gorra3.jpg"
     ),
     gorraDroid = new Producto(
-      "21",
       "gorra",
       "gorra droid",
       "estampado android",
@@ -217,7 +194,6 @@
       "./assets/productos/gorra4.jpg"
     ),
     gorraNucba = new Producto(
-      "22",
       "gorra",
       "gorra nucba",
       "logo especial nucba",
@@ -226,7 +202,6 @@
       "./assets/productos/gorra5.jpg"
     ),
     gorraJs = new Producto(
-      "23",
       "gorra",
       "gorra js",
       "estampa javascript",
@@ -235,7 +210,6 @@
       "./assets/productos/gorra6.jpg"
     ),
     padCheatJs = new Producto(
-      "24",
       "pad",
       "pad js",
       "cheats js",
@@ -244,7 +218,6 @@
       "./assets/productos/pad1.jpg"
     ),
     padLogoJs = new Producto(
-      "25",
       "pad",
       "pad js",
       "logo js",
@@ -253,7 +226,6 @@
       "./assets/productos/pad2.jpg"
     ),
     padGit = new Producto(
-      "26",
       "pad",
       "pad git",
       "cheats git",
@@ -262,7 +234,6 @@
       "./assets/productos/pad3.jpg"
     ),
     padLinux = new Producto(
-      "27",
       "pad",
       "pad linux",
       "cheats linux",
@@ -271,7 +242,6 @@
       "./assets/productos/pad4.jpg"
     ),
     padMario = new Producto(
-      "28",
       "pad",
       "pad mario",
       "estampa mario bros",
@@ -280,7 +250,6 @@
       "./assets/productos/pad5.jpg"
     ),
     riñoneraKitNucba = new Producto(
-      "29",
       "bolso",
       "riñonera kit nucba",
       "",
@@ -289,7 +258,6 @@
       "./assets/productos/prod8.jpg"
     ),
     bolsoGoCel = new Producto(
-      "30",
       "bolso",
       "bolso go",
       "golang celeste",
@@ -298,7 +266,6 @@
       "./assets/productos/prod1.jpg"
     ),
     bolsoGoHistorieta = new Producto(
-      "31",
       "bolso",
       "bolso go",
       "go historieta",
@@ -307,7 +274,6 @@
       "./assets/productos/prod2.jpg"
     ),
     bolsoGo3d = new Producto(
-      "32",
       "bolso",
       "bolso go",
       "go en 3d",
@@ -316,7 +282,6 @@
       "./assets/productos/prod3.jpg"
     ),
     bolsoJsEstampa = new Producto(
-      "33",
       "bolso",
       "bolso js",
       "estampa javascript",
@@ -325,7 +290,6 @@
       "./assets/productos/prod4.jpg"
     ),
     mochilaJs = new Producto(
-      "34",
       "bolso",
       "mochila js",
       "amarilla especial",
@@ -334,7 +298,6 @@
       "./assets/productos/prod5.jpg"
     ),
     bolsoJsNode = new Producto(
-      "35",
       "bolso",
       "bolso js",
       "js node",
@@ -343,7 +306,6 @@
       "./assets/productos/prod6.jpg"
     ),
     bolsoWp = new Producto(
-      "36",
       "bolso",
       "bolso wp",
       "motivo wordpress",
@@ -399,6 +361,9 @@
     findNucba = document.getElementById("findNucba");
   let filterProd = [],
     arrCart = JSON.parse(localStorage.getItem("carrito")) || [];
+    let cartNumber = document.getElementById("cartNum");
+    let cartNumber2 = document.getElementById("cartNum2");
+    let cartCount = 0;
 
   const dibujaProductos = () => {
     productos.map((prod, indx) => {
@@ -519,14 +484,23 @@
   };
 
   addToCart = (e) => {
-    let cartPosition = +e.dataset.position;
+    numerosCarrito()
 
+    let cartPosition = +e.dataset.position;
     filterProd == ""
       ? arrCart.push(productos[cartPosition])
       : arrCart.push(filterProd[filterProd.length - 1][cartPosition]);
+    arrCart.map((obj,indx) => obj.id = indx);
     console.log(arrCart);
     storage.setItem("carrito", JSON.stringify(arrCart));
   };
+
+  let numerosCarrito = () => {
+    cartCount++;
+    cartNumber.innerHTML = `${storageCart.length + cartCount}</i>`;
+    cartNumber2.innerHTML = `${storageCart.length + cartCount}<i class="fas fa-shopping-cart"></i>`;
+  }
+
 
   const limpiarForm = () => {
     formulario.reset();
@@ -538,107 +512,13 @@
   };
 
   const init = () => {
-    document.addEventListener("DOMContentLoaded", () => {
       dibujaProductos();
-
       // eventDom
       formulario.addEventListener("submit", fitrar);
       menu.addEventListener("click", desplegaMenu);
       findNucba.addEventListener("click", filtrarNucba);
-    });
   };
 
   init();
 
-  /*******************************************************
-   LOCAL STORAGE
-   *******************************************************/
-  let emailName = document.getElementById("userSesion").parentNode.parentNode;
-  let emailNameMovile = document.getElementById("userSesion");
-  const storage = window.localStorage;
-  let subMenu = document.getElementsByClassName("menuFlotante")[0];
-  let cartNum = document.getElementById("cartNum");
-  let cartNum2 = document.getElementById("cartNum2");
 
-  const carrito = () => {
-    cartNum.innerHTML = `${arrCart.length}</i>`;
-    cartNum2.innerHTML = `${arrCart.length}<i class="fas fa-shopping-cart"></i>`;
-  };
-
-  const StorageMail = () => {
-    if (storage.getItem("userMail")) {
-      let nameSesionMovile = `                    
-      <span id="userSesion2" class="text-secondary">
-      ${storage.getItem("userMail")}
-      <i class="fas fa-user"></i>
-      <button id ="exitMovile" class="remCart btn btn-sm btn-info">
-      salir
-      </button>
-      </span>`;
-      let nameSesion = `
-      <a class="useActive">
-      <span id="userSesion">
-      ${storage.getItem("userMail")}
-      <i class="fas fa-user"></i>
-      </span>
-      </a>
-      `;
-      emailName.innerHTML = nameSesion;
-      emailNameMovile.innerHTML = nameSesionMovile;
-    }
-  };
-
-  emailName.addEventListener("click", () => {
-    storage.getItem("userMail")
-      ? subMenu.classList.toggle("visible")
-      : subMenu.classList.remove("visible");
-  });
-
-  let exit = document.getElementById("exit");
-  let exitMovile = document.getElementById("exitMovile");
-
-  exit.addEventListener("click", () => {
-    storage.clear();
-    if (!storage.getItem("userMail")) {
-      emailName.innerHTML = `
-      <a class="session" href="/src/sesion.html">
-      <span id="userSesion">
-      Iniciar Sesion
-      <i class="fas fa-user"></i>
-      </span>
-      </a>
-      `;
-      emailNameMovile.innerHTML = `
-      <span id="userSesion2" class="text-secondary">
-      Iniciar Sesion
-      <i class="fas fa-user"></i>
-      </span>
-          `;
-    }
-    subMenu.classList.remove("visible");
-  });
-  exitMovile.addEventListener("click", () => {
-    storage.clear();
-    console.log(exit);
-    if (!storage.getItem("userMail")) {
-      emailName.innerHTML = `
-      <a class="session" href="/src/sesion.html">
-      <span id="userSesion">
-      Iniciar Sesion
-      <i class="fas fa-user"></i>
-              </span>
-              </a>
-          `;
-      emailNameMovile.innerHTML = `
-          <span id="userSesion2" class="text-secondary">
-          Iniciar Sesion
-          <i class="fas fa-user"></i>
-          </span>
-          `;
-    }
-    subMenu.classList.remove("visible");
-  });
-
-  StorageMail();
-  carrito();
-})();

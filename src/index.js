@@ -1,10 +1,12 @@
 import './css/general.css';
-import './js/all.min.js'
 import './styles.css';
-import './css/header.css'
-import './css/footer.css'
-import './css/index.css'
-import './assets/logo.svg'
+import './css/header.css';
+import './css/footer.css';
+import './css/index.css';
+import './assets/logo.svg';
+import './js/newsletter.js';
+import './js/all.min';
+import './js/storage';
 
 const menu = document.getElementById('menu');
 const persiana = document.getElementById('persiana');
@@ -14,4 +16,3 @@ const desplegaMenu = () => {
 };
 
 menu.addEventListener('click', desplegaMenu);
-
