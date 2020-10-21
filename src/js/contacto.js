@@ -12,12 +12,12 @@ const persiana = document.getElementById('persiana');
 // const newsletter = [];
 let   array = [];
 class Usuario {
-    constructor(nombre, apellido, email, mensaje) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.mensaje = mensaje;
-    }
+  constructor(nombre, apellido, email, mensaje) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.mensaje = mensaje;
+  }
 }
 
 const envioForm = (e) => {
@@ -34,7 +34,7 @@ const envioForm = (e) => {
 }
 
 const desplegaMenu = () => {
-  persiana.classList.toggle('active');
+  persiana.classList.toggle("active");
 };
 
 boton.addEventListener('click', envioForm);

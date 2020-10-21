@@ -56,9 +56,16 @@ const dibujaProductos = () => {
   });
 };
 
+// -----------------
+
+// console.log( array );
+
+// ----------------
+console.log(arrCart);
 borrarCarr = (e) => {
+  // --REMOVEMOS DEL DOM--
   let objRemove = e.parentNode.parentNode.parentNode.parentNode;
-  // objRemove.classlist.add = ''
+
   objRemove.remove();
 
   let equis = e.dataset.position;
