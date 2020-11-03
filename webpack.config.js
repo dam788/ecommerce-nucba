@@ -40,7 +40,23 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: './src/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/carrito2.html',
+      filename: './src/carrito2.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contacto.html',
+      filename: './src/contacto.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/productos.html',
+      filename: './src/productos.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/sesion.html',
+      filename: './src/sesion.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -49,8 +65,20 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
+          from: 'src/',
+          to: 'src/',
+        },
+        {
           from: 'src/assets',
-          to: 'assets/',
+          to: 'src/assets/',
+        },
+        {
+          from: 'src/js',
+          to: 'src/js/',
+        },
+        {
+          from: 'src/css',
+          to: 'src/css/',
         },
       ],
     }),
